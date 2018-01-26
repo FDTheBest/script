@@ -1,0 +1,23 @@
+function doGet(e){
+  
+  var ss = SpreadsheetApp.openByUrl("URL")
+  var sheet = ss.getSheetByName('Sheet1');
+
+  adduser(e,sheet);
+}
+
+function doPost(e){
+  
+  var ss = SpreadsheetApp.openByUrl("URL")
+  var sheet = ss.getSheetByName('Sheet1');
+
+  adduser(e,sheet);
+}
+                              
+function adduser(e,sheet) {
+    
+    var id = e.parameter.id;
+    var name = e.parameter.name;
+ 
+    sheet.appendRow([id,name]);
+}
